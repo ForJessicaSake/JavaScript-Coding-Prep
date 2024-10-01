@@ -33,3 +33,17 @@ and changes its background color to "lightgreen".*/
 
 const divElement = document.querySelector("section div");
 divElement.style.backgroundColor = "lightGreen";
+
+/*I've provided you with an <h1> element which contains 
+7 individual spans (each holding a single letter). 
+Please write some JavaScript to make them rainbow-colored! 
+In dom.js you'll find an array of color names called colors.  
+Your task is to select all spans, iterate over them, 
+and assign them each one of the colors from the colors array. 
+The first span should be red, the second should be orange, etc.*/
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; 
+const spans = document.querySelectorAll('h1 span');
+for(let i =  0; i <spans.length; i++){
+    spans[i].style.color =  colors[i]
+}
