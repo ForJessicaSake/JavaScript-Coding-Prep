@@ -87,7 +87,7 @@ for (let i = 1; i <= 100; i++) {
 then appends it as the last child of a <div> with the ID "container".*/
 
 const paragraph = document.createElement("p");
-paragraph.innerText= "learning how to create elements and append.";
+paragraph.innerText = "learning how to create elements and append.";
 container.append(paragraph);
 
 /*Select the second <li> element in a list and remove it from the DOM.*/
@@ -101,3 +101,50 @@ children[0].remove();
 for (let child of children) {
   console.log(child);
 }
+
+/* Write a script that creates a new <li> element with the text
+ "New Item" and appends it to a <ul> with the ID "itemList" every time 
+ a button with the ID "addItemBtn" is clicked. Add a separate button with the ID "removeItemBtn"
+that removes the last <li> element when clicked.*/
+
+const ul = document.querySelector("#itemList");
+const addItemButton = document.querySelector("#addItemBtn");
+const removeItemButton = document.querySelector("#removeItemBtn");
+
+addItemButton.addEventListener("click", () => {
+  const newList = document.createElement("li");
+  newList.innerText = "New Item";
+  alert("clicked add item button");
+  ul.append(newList);
+});
+
+removeItemButton.addEventListener("click", () => {
+  const lastElement = ul?.children[ul?.children.length - 1];
+  if (!lastElement) return;
+  lastElement.remove();
+  console.log(lastElement.remove());
+});
+
+/* Create a script that changes the text of a <p> element with the ID "message" 
+to "Mouse Over Detected!" when the mouse hovers over it, and resets the text back to
+"Hover over me!" when the mouse leaves the paragraph.*/
+
+const message = document.querySelector("#message");
+message.addEventListener("mouseover", () => {
+  message.innerText = "Mouse Over Detected!";
+});
+
+message.addEventListener("mouseout", () => {
+  message.innerText = " Hover over me!";
+});
+
+/*Add an event listener to a button with the ID "toggleDarkMode". 
+When the button is clicked, toggle the class "dark-mode" on the <body> element. 
+The button text should change to "Light Mode" if dark mode is enabled 
+and back to "Dark Mode" if it's disabled.*/
+
+const htmlBody = document.querySelector("body");
+const toggleButton = document.querySelector("#toggleDarkMode");
+toggleButton.addEventListener("click", () => {
+  htmlBody.classList.toggle("dark-mode");
+});
