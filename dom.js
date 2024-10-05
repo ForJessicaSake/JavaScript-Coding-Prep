@@ -148,3 +148,59 @@ const toggleButton = document.querySelector("#toggleDarkMode");
 toggleButton.addEventListener("click", () => {
   htmlBody.classList.toggle("dark-mode");
 });
+
+/* Create a script that generates random color for your body background. */
+const randomColor = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
+};
+
+const headingOne = document.querySelector("h1");
+const themeButton = document
+  .querySelector("#theme")
+  .addEventListener("click", () => {
+    headingOne.innerText = `theme color is - ${randomColor()}`;
+    document.body.style.backgroundColor = randomColor();
+  });
+
+/* index.html already has a form element that contains two <input> elements, 
+one for quantity and one for a product name. index.html also contains an empty <ul> 
+where you will append new <li>'s.*/
+
+const ullists = document.querySelector("#list");
+const form = document.querySelector("#form");
+const quantity = form.elements.qty;
+const product = form.elements.product;
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const list = document.createElement("li");
+  list.innerText = `${quantity.value} ${product.value}`;
+  ullists.append(list);
+});
+
+/*In the index.html file, you'll find an <h1> and an <input type="text"> element. The h1 should 
+start with the text "Enter Your Username" (I've done that for you, already in the markup).
+Whenever an input event is fired on the <input> element, update the <h1> so that it displays
+"Welcome, " plus the current value from the text input. If the <input> goes back to being empty, 
+update the <h1> so that it once again says "Enter Your Username"*/
+
+const usernameHeading = document.querySelector("#usernameHeading");
+const usernameInput = document.querySelector("#username");
+
+usernameInput.addEventListener("input", (e) => {
+  const username = usernameInput.value;
+  if (username) {
+    usernameHeading.innerText = `Welcome ${username}`;
+  } else {
+    usernameHeading.innerText = "Enter Your Username";
+  }
+});
+
+/*change event*/
+usernameInput.addEventListener("change", (e) => {
+  console.log(`${e.target.value} triggered on blur`);
+});

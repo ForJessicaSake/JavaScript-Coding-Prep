@@ -7,6 +7,7 @@
 
   <body>
     <h1>Hello World</h1>
+    <button id="theme">Generate Theme Color</button>
     <p id="intro">Hello!</p>
     <h2>Title 1</h2>
     <h2>Title 2</h2>
@@ -41,14 +42,26 @@
     <div id="container"></div>
 
     <div>
-      <ul id="itemList">
-      </ul>
+      <ul id="itemList"></ul>
       <button id="addItemBtn">Add Item</button>
       <button id="removeItemBtn">Remove Item</button>
       <p id="message">Hover on me!</p>
       <button id="toggleDarkMode">Toggle Mode</button>
     </div>
-    
+
+    <form action="/nowhere" id="form">
+      <label for="product">Enter A Product</label>
+      <input type="text" id="product" name="product" />
+      <label for="qty">Enter A Quantity</label>
+      <input type="number" id="qty" name="qty" />
+      <button>Submit</button>
+    </form>
+    <ul id="list"></ul>
+
+    <form>
+      <h1 id="usernameHeading">Enter Your Username</h1>
+      <input type="text" id="username" />
+    </form>
   </body>
   <script src="dom.js"></script>
 </html>
