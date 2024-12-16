@@ -8,3 +8,19 @@
 .highlight {
   background-color: yellow;
 }
+
+#toDoList {
+  display: flex;
+  flex-direction: column;
+}
+
+#shows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#shows img {
+  height: 300px;
+  width: 300px;
+}
