@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/node": "^22.10.2"
+  },
+  "dependencies": {
+    "give-me-a-joke": "^0.5.1"
   }
 }
