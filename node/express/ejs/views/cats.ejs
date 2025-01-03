@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('partials/head', {title})%>
+  <body>
+    <h1>Cats database</h1>
+    <ul>
+      <%for(let cat of cats){%>
+      <li>
+        <%=cat.name%> is <%=cat.age%> years old and its stripes are
+        <%=cat.color%>
+      </li>
+      <%}%>
+    </ul>
+    <form action="/cats" method="post">
+      <input type="text" name="name" />
+      <input type="number" name="age" />
+      <input type="text" name="color" />
+      <button>Add cat details</button>
+    </form>
+  </body>
+</html>

@@ -1,7 +1,10 @@
 const express = require("express");
 
+//Initialize Express
 const app = express();
+const port = 3000;
 
+//express routing
 app.get("/", (req, res) => {
   res.send("Welcome to the pet shop");
 });
@@ -40,10 +43,26 @@ app.post("/dogs", (req, res) => {
   });
 });
 
-app.get("*", (req, res) => {
-  res.send("This route cannot be found");
+//catch all route when a path does not exist
+// app.get("*", (req, res) => {
+//   res.send("This route cannot be found");
+// });
+
+//dynamic routing
+app.get("/cats/:id", (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  res.send(`cat with id ${id}`);
 });
 
-app.listen(3000, () => {
-  console.log("listening on port 3000");
+//route with query parameters
+app.get("/cats", (req, res) => {
+  const { q } = req.query;
+  console.log(q);
+  res.send(`searching for ${q}`);
+});
+
+//listening on port
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });

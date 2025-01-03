@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head', {title}) -%>
+  <body>
+    <!--Displaying dynamic values in ejs-->
+    <p>The cat is named <%= title %> and is <%= age %> years old</p>
+    <p><%= title %>'s age is an <%=age% 2 === 0 ? "even" : "odd"%> number</p>
+  </body>
+</html>
